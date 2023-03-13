@@ -19,65 +19,50 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-  return view('home');
+    return view('home');
 });
 
 Route::get('/admin', function () {
-  return view('admin.dashboard');
+    return view('admin.dashboard');
 });
 
 Route::prefix('admin')->group(function () {
-  Route::get('/karir', function () {
-  return view('admin.');
-});
- Route::get('/profile', function () {
-  return view('admin.profile');
-});
-  Route::get('/profile/{nim}', function (string $nim) {
-  return view('admin.profile',['nim'=>$nim]);
-});
-  Route::get('/pengalaman', function () {
-  return view('admin.pengalaman');
-});
+    Route::get('/karir', function () {
+        return view('admin.');
+    });
+    Route::get('/profile', function () {
+        return view('admin.profile');
+    });
+    Route::get('/profile/{nim}', function (string $nim) {
+        return view('admin.profile', ['nim' => $nim]);
+    });
+    Route::get('/pengalaman', function () {
+        return view('admin.pengalaman');
+    });
 });
 Route::get('/about-us', function () {
-  return view('about-us');
+    return view('about-us');
 });
-Route::resource('/contact-us', ContactController::class)->only([
-  'index',
-  'create',
-  'store'
-]);
-Route::prefix('news')->controller(NewsController::class)->group(function () {
-  Route::get('/', 'index');
-  Route::get('/{slug}', 'show');
-});
+Route::resource('/contact-us', ContactController::class)->only(['index', 'create', 'store']);
+Route::prefix('news')
+    ->controller(NewsController::class)
+    ->group(function () {
+        Route::get('/', 'index');
+        Route::get('/{slug}', 'show');
+    });
 
 Route::prefix('category')->group(function () {
-  Route::get('/{category}', [ProductController::class, 'show'])
-    ->whereIn(
-      'category',
-      [
-        'digital-books',
-        'marbel-edu-games',
-        'marbel-and-friends-kids-games',
-        'riri-story-books',
-        'kolak-kids-songs',
-        'kabi-islamic-education',
-        'marbel-junior',
-        'keong-casual-games'
-      ]
-    );
+    Route::get('/{category}', [ProductController::class, 'show'])->whereIn('category', ['digital-books', 'marbel-edu-games', 'marbel-and-friends-kids-games', 'riri-story-books', 'kolak-kids-songs', 'kabi-islamic-education', 'marbel-junior', 'keong-casual-games']);
 });
 
 Route::prefix('program')->group(function () {
-  Route::get('/karir', [ProgramController::class, 'karir']);
-  Route::get('/kunjungan-industri', [ProgramController::class, 'kunjunganIndustri']);
-  Route::get('/magang', [ProgramController::class, 'magang']);
+    Route::get('/karir', [ProgramController::class, 'karir']);
+    Route::get('/kunjungan-industri', [ProgramController::class, 'kunjunganIndustri']);
+    Route::get('/magang', [ProgramController::class, 'magang']);
 });
 
 Route::fallback(function () {
-  return '404 halaman tidak ditemukan';
+    return '404 halaman tidak ditemukan';
 });
 Auth::routes();
 
