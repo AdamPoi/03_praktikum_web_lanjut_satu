@@ -29,9 +29,6 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/articles/{id}', [ArticleController::class, 'index']);
 
 
-Route::get('/', function () {
-  return view('home');
-});
 
 Route::get('/admin', function () {
   return view('admin.dashboard');
@@ -91,8 +88,4 @@ Route::fallback(function () {
 });
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
