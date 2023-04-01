@@ -17,9 +17,14 @@ class MahasiswaFactory extends Factory
   public function definition(): array
   {
     return [
-      'nama' => fake()->name(),
-      'nim' => fake()->randomNumber(8, true),
-      'kelas' => 'TI 2H'
+      'Nama' => fake()->name(),
+      'Nim' => fake()->randomNumber(8, true),
+      'Email' => fake()->safeEmail(),
+      'No_Handphone' => fake()->randomNumber(9, true),
+      'Kelas' => 'TI 2H',
+      'Tanggal_Lahir' => fake()->date(),
+      'Jurusan' => 'DIV-Teknik Informatika',
+
     ];
   }
 }

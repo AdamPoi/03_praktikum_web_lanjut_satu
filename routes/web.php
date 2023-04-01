@@ -89,3 +89,5 @@ Route::fallback(function () {
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::resource('mahasiswa', MahasiswaController::class);

@@ -12,11 +12,11 @@ class DatabaseSeeder extends Seeder
    */
   public function run(): void
   {
-    $this->call([
-      MahasiswaSeeder::class
-    ]);
+    // $this->call([
+    //   MahasiswaSeeder::class
+    // ]);
 
-    \App\Models\Mahasiswa::factory(10)->create();
+    \App\Models\Mahasiswa::factory(25)->create();
 
 
     // \App\Models\User::factory(10)->create();
