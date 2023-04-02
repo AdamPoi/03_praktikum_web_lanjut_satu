@@ -7,7 +7,7 @@
             </div>
             <div class="d-flex justify-content-between align-items-center gap-4 my-2">
                 <form action="{{ route('mahasiswa.index') }}" method="GET" class="d-flex">
-                    <input type="text" name="s" class="form-control mr-2" id="keyword">
+                    <input type="text" name="s" class="form-control mr-2" placeholder="Nama">
                     <button type="submit" class="btn btn-primary">Cari</button>
                 </form>
                 <a class="btn btn-success" href="{{ route('mahasiswa.create') }}"> Input Mahasiswa</a>

@@ -16,8 +16,7 @@ class MahasiswaController extends Controller
       ->when($request->input('s'), function ($query) use ($request) {
         return $query->where('Nama', 'LIKE', '%' . $request->input('s') . '%');
       })->paginate(5);
-    return view('mahasiswas.index', compact('mahasiswas'))
-      ->with('i', (request()->input('page', 1) - 1) * 5);
+    return view('mahasiswas.index', compact('mahasiswas'));
   }
 
   /**

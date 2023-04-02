@@ -34,7 +34,7 @@
                             <input type="text" name="Nama" class="form-control" id="Nama"
                                 value="{{ $Mahasiswa->Nama }}" ariadescribedby="Nama">
                         </div>
-                         <div class="form-group">
+                        <div class="form-group">
                             <label for="Email">Email</label>
                             <input type="text" name="Email" class="form-control" id="Email"
                                 value="{{ $Mahasiswa->Email }}" ariadescribedby="Email">
@@ -49,10 +49,10 @@
                             <input type="Jurusan" name="Jurusan" class="form-control" id="Jurusan"
                                 value="{{ $Mahasiswa->Jurusan }}" ariadescribedby="Jurusan">
                         </div>
-                          <div class="form-group">
-                            <label for="Tanggal_lahir">Tanggal lahir</label>
-                            <input type="text" name="Tanggal_lahir" class="form-control" id="Tanggal_lahir"
-                                value="{{ $Mahasiswa->Tanggal_lahir }}" ariadescribedby="Tanggal_lahir">
+                        <div class="form-group">
+                            <label for="Tanggal_Lahir">Tanggal lahir</label>
+                            <input type="date" name="Tanggal_Lahir" class="form-control" id="Tanggal_Lahir"
+                                value="{{ $Mahasiswa->Tanggal_Lahir }}" ariadescribedby="Tanggal_Lahir">
                         </div>
                         <div class="form-group">
                             <label for="No_Handphone">No_Handphone</label>
