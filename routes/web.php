@@ -7,6 +7,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProgramController;
+use App\Models\Mahasiswa;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -91,3 +92,7 @@ Auth::routes();
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('mahasiswa', MahasiswaController::class);
+
+Route::prefix('mahasiswa')
+  ->get('{nim}/nilai', [MahasiswaController::class, 'showNilai'])
+  ->name('mahasiswa.nilai');
