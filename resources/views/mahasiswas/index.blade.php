@@ -33,7 +33,7 @@
             <tr>
                 <td>{{ $Mahasiswa->Nim }}</td>
                 <td>{{ $Mahasiswa->Nama }}</td>
-                <td>{{ $Mahasiswa->Kelas }}</td>
+                <td>{{ $Mahasiswa->kelas->nama_kelas }}</td>
                 <td>{{ $Mahasiswa->Jurusan }}</td>
                 <td>
                     <form action="{{ route('mahasiswa.destroy', $Mahasiswa->Nim) }}" method="POST">

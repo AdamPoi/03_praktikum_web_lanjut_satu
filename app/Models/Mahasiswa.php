@@ -22,4 +22,9 @@ class Mahasiswa extends Model
     'Tanggal_Lahir',
     'No_Handphone',
   ];
+
+  public function kelas()
+  {
+    return $this->belongsTo(Kelas::class);
+  }
 }

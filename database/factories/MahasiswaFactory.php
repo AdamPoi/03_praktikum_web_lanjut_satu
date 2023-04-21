@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Kelas;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -19,12 +20,8 @@ class MahasiswaFactory extends Factory
     return [
       'Nama' => fake()->name(),
       'Nim' => fake()->randomNumber(8, true),
-      'Email' => fake()->safeEmail(),
-      'No_Handphone' => fake()->randomNumber(9, true),
-      'Kelas' => 'TI 2H',
-      'Tanggal_Lahir' => fake()->date(),
       'Jurusan' => 'DIV-Teknik Informatika',
-
+      'kelas_id' => Kelas::inRandomOrder()->first()->id
     ];
   }
 }
